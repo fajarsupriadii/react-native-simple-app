@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { useSelector } from 'react-redux';
 // import { clearAuthToken } from './action/authAction';
 import CarouselComponent from './CarouselComponent';
+import HomeMenuComponent from './HomeMenuComponent';
 
 const HomeScreen = ({ navigation }) => {
     // const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <CarouselComponent />
+            <HomeMenuComponent />
             <View style={styles.contentContainer}>
             <Text style={styles.heading}>Welcome {name}</Text>
               <Text style={styles.heading}>You are Logged In!</Text>
@@ -42,14 +44,6 @@ const styles = StyleSheet.create({
     heading: {
       fontSize: 24,
       marginBottom: 20,
-    },
-    input: {
-      width: '80%',
-      height: 40,
-      borderColor: 'gray',
-      borderWidth: 1,
-      marginBottom: 20,
-      padding: 10,
     },
 });
 
