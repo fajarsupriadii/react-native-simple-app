@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthToken } from './action/authAction';
@@ -28,7 +29,7 @@ const LoginScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.heading}>Login</Text>
+            <Text style={styles.heading}>Simple App</Text>
             <TextInput
                 style={styles.input}
                 placeholder='Username'
@@ -44,29 +45,55 @@ const LoginScreen = ({ navigation }) => {
                 secureTextEntry
                 onSubmitEditing={handleLogin}
             />
-            <Button title='login' onPress={handleLogin} />
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                <Icon name='login' style={styles.icon} />
+                <Text style={styles.text}>LOGIN</Text>
+            </TouchableOpacity>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#E6FDFF'
     },
     heading: {
-      fontSize: 24,
-      marginBottom: 20,
+        fontFamily: 'FontsFree-Net-Billabong',
+        fontSize: 40,
+        marginBottom: 5,
+        color: '#13293D',
     },
     input: {
-      width: '80%',
-      height: 40,
-      borderColor: 'gray',
-      borderWidth: 1,
-      marginBottom: 20,
-      padding: 10,
+        width: '80%',
+        height: 40,
+        backgroundColor: 'white',
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 20,
+        padding: 10,
+        borderRadius: 5,
     },
+    button: {
+        width: '80%',
+        height: 40,
+        borderRadius: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#084887',
+        justifyContent: 'center',
+    },
+    icon: {
+        fontSize: 16,
+        marginRight: 10,
+        color: '#fbfcff',
+    },
+    text: {
+        fontSize: 16,
+        color: '#fbfcff',
+    }
 });
 
 export default LoginScreen;

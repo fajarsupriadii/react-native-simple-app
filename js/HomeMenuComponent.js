@@ -1,15 +1,22 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
 
 const screenWidth = Dimensions.get('window').width;
 
 const HomeMenuComponent = () => {
+    const navigation = useNavigation();
+    
+    const handleAccount = () => {
+        navigation.navigate('WebView');
+    };
+
     return (
         <View style={styles.menuContainer}>
 
             <View style={styles.menuRow}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={handleAccount}>
                 <Icon name='badge-account-horizontal-outline' style={styles.icon} />
                 <Text style={styles.text}>account</Text>
             </TouchableOpacity>

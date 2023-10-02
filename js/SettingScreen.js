@@ -35,11 +35,13 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     icon: {
-        fontSize: 24,
+        fontSize: 22,
         marginRight: 5,
+        color: '#13293D',
     },
     text: {
-        fontSize: 20
+        fontSize: 18,
+        color: '#13293D',
     }
 });
 
