@@ -4,12 +4,16 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const screenWidth = Dimensions.get('window').width;
 
-const HomeMenuComponent = () => {
+const HomeMenuComponent = ({ navigation }) => {
+    const handleAccount = () => {
+        navigation.push('WebView');
+    };
+
     return (
         <View style={styles.menuContainer}>
 
             <View style={styles.menuRow}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={handleAccount}>
                 <Icon name='badge-account-horizontal-outline' style={styles.icon} />
                 <Text style={styles.text}>account</Text>
             </TouchableOpacity>

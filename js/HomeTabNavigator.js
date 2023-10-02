@@ -14,6 +14,11 @@ const HomeTabNavigator = () => {
     <Tab.Navigator
       screenOptions={() => ({
         headerTintColor: '#3E92CC',
+        headerTitleStyle: {
+          marginTop: 10,
+          fontFamily: 'FontsFree-Net-Billabong',
+          fontSize: 30,
+        },
         headerStyle: {
           backgroundColor: '#E6FDFF',
         },
