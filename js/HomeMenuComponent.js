@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
 
 const screenWidth = Dimensions.get('window').width;
 
-const HomeMenuComponent = ({ navigation }) => {
+const HomeMenuComponent = () => {
+    const navigation = useNavigation();
+    
     const handleAccount = () => {
-        navigation.push('WebView');
+        navigation.navigate('WebView');
     };
 
     return (

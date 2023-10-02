@@ -10,6 +10,15 @@ import SettingScreen from './SettingScreen';
 const Tab = createBottomTabNavigator();
 
 const HomeTabNavigator = () => {
+  const tabOption = (title, icon) => {
+    return ({
+      tabBarLabel: title,
+      tabBarIcon: ({ color, size }) => (
+        <Icon name={icon} color={color} size={size} />
+      ),
+    });
+  }
+
   return (
     <Tab.Navigator
       screenOptions={() => ({
@@ -32,52 +41,27 @@ const HomeTabNavigator = () => {
       <Tab.Screen
         name="Simple App"
         component={HomeScreen}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="home" color={color} size={size} />
-          ),
-        }}
+        options={tabOption('Home', 'home')}
       />
       <Tab.Screen
         name="Explore"
         component={Explore}
-        options={{
-          tabBarLabel: 'Explore',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="magnify" color={color} size={size} />
-          ),
-        }}
+        options={tabOption('Explore', 'magnify')}
       />
       <Tab.Screen
         name="Upload"
         component={UploadScreen}
-        options={{
-          tabBarLabel: 'Upload',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="plus-box" color={color} size={size} />
-          ),
-        }}
+        options={tabOption('Upload', 'plus-box')}
       />
       <Tab.Screen
         name="Videos"
         component={VideoScreen}
-        options={{
-          tabBarLabel: 'Videos',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="movie-open" color={color} size={size} />
-          ),
-        }}
+        options={tabOption('Videos', 'movie-open')}
       />
       <Tab.Screen
         name="Settings"
         component={SettingScreen}
-        options={{
-          tabBarLabel: 'Settings',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="cog" color={color} size={size} />
-          ),
-        }}
+        options={tabOption('Settings', 'cog')}
       />
     </Tab.Navigator>
   );
