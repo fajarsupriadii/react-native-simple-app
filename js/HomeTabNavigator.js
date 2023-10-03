@@ -6,6 +6,7 @@ import Explore from './ExploreScreen';
 import UploadScreen from './UploadScreen';
 import VideoScreen from './VideoScreen';
 import SettingScreen from './SettingScreen';
+import DatatableScreen from './DatatableScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -45,7 +46,7 @@ const HomeTabNavigator = () => {
       />
       <Tab.Screen
         name="Explore"
-        component={Explore}
+        component={DatatableScreen}
         options={tabOption('Explore', 'magnify')}
       />
       <Tab.Screen
